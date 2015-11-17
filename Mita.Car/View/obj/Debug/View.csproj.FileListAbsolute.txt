@@ -1,0 +1,8 @@
+c:\users\дарья\documents\visual studio 2015\Projects\Mita.Car\View\bin\Debug\View.exe.config
+C:\Users\Дарья\Documents\Visual Studio 2015\Projects\Mita.Car\View\bin\Debug\View.exe
+C:\Users\Дарья\Documents\Visual Studio 2015\Projects\Mita.Car\View\bin\Debug\View.pdb
+C:\Users\Дарья\Documents\Visual Studio 2015\Projects\Mita.Car\View\bin\Debug\Model.dll
+C:\Users\Дарья\Documents\Visual Studio 2015\Projects\Mita.Car\View\bin\Debug\Model.pdb
+C:\Users\Дарья\Documents\Visual Studio 2015\Projects\Mita.Car\View\obj\Debug\View.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Documents\Visual Studio 2015\Projects\Mita.Car\View\obj\Debug\View.exe
+C:\Users\Дарья\Documents\Visual Studio 2015\Projects\Mita.Car\View\obj\Debug\View.pdb
