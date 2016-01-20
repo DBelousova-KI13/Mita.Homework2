@@ -8,52 +8,42 @@ namespace Model
 {
     public class Driver
     {
-        private readonly DateTime _licenceDate;
-        private string  _name;
         private string _category = "";
-        private Car _car;
 
         public Driver(DateTime licenceDate, string name)
         {
-            _licenceDate = licenceDate;
-            _name = name;
+            LicenceDate = licenceDate;
+            Name = name;
         }
 
         public void OwnCar(Car car)
         {
             Car temp = null;
-            try
+            if (_category.Contains(car.Categorie))
             {
-                if (_category.Contains(car.Categorie))
-                {
-                    temp = car;
-                    Console.WriteLine("Машина закреплена за водителем.");
-                }
-                else
-                {
-                    throw new System.ArgumentException("У предлагаемого владельца нет прав для управления данной машиной");                    
-                }
+                temp = car;
+                Console.WriteLine("Машина закреплена за водителем.");
             }
-            catch (System.ArgumentException)
+            else
             {
+                throw new System.ArgumentException("У предлагаемого владельца нет прав для управления данной машиной");
+            }
 
-                Console.WriteLine("У предлагаемого владельца нет прав для управления данной машиной");
-            }
-            _car = temp;
+            PropsCar = temp;
         }
 
-        public DateTime LicenceDate => _licenceDate;
+        public DateTime LicenceDate { get; }
 
-        public string Name => _name;
+        public string Name { get; }
 
-        public Car PropsCar => _car;
+        public Car PropsCar { get; private set; }
 
         public int Experience
         {
             get
             {
-               int temp = DateTime.Now.Year - _licenceDate.Year;
-                if ((DateTime.Now.Month < _licenceDate.Month) || (DateTime.Now.Month == _licenceDate.Month && DateTime.Now.Day <_licenceDate.Day))
+               int temp = DateTime.Now.Year - LicenceDate.Year;
+                if ((DateTime.Now.Month < LicenceDate.Month) || (DateTime.Now.Month == LicenceDate.Month && DateTime.Now.Day <LicenceDate.Day))
                 {
                     temp--;
                 }
@@ -67,21 +57,23 @@ namespace Model
             set { _category = value; }
         }
 
-        public void AddCategory(char cat)
+        public string AddCategory(char cat)
         {
             
             if ((cat < 'A') || (cat > 'F'))
             {
-                Console.WriteLine("Введено неверное значение категории");
+                return ("категория не была присвоена,так как было задано неверное значение");
             }
-             else
+            else
             {
+                string temp = "";
                     if (!(_category.Contains(cat)))
                     {
                          _category += cat;
-                        Console.WriteLine("Водителю успешно присвоена категория {0}", cat);
-                }
-               
+                        temp = "Водителю успешно присвоена категория " + cat;
+                        
+                    }
+                return temp;
             }
         }
 

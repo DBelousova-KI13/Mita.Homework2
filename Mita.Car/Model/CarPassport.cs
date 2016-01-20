@@ -8,15 +8,13 @@ namespace Model
 {
     public class CarPassport
     {
-        private readonly Car _car;
-
         public CarPassport(Car car)
         {
-            _car = car;
+            Car = car;
         }
 
         public Driver Owner { get; set; }
 
-
+        public Car Car { get; }
     }
 }
